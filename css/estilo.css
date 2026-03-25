@@ -1,9 +1,34 @@
+/* Reset CSS */
+* {
+/*Margem = Exeterna */
+    margin: 0;
 
+}
+    
 body {
     /* Cor de Fundo */
-    background-color:  #ebd8d0;
+    background-color:  #eadfdb;
     
     /*Cor do Texto */
-    color: rgb(0, 0, 0);
+    color: #722e43;
+}   
+/* Seletor para os <A> */
+a{
+
+ /* Propriedade e VALOR */
+ text-decoration: none;
+ color: #722e43;
+}
+
+
+/* HEARDER = Cabeçalho */
+header {
+    /*ROW  Linha Horinzotal*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #cc7f91;
+    /*Largura ou Comprimento */
+    width: 100%;
 
 }
