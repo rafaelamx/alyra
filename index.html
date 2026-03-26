@@ -21,30 +21,31 @@
         <header>
 
             <!-- Logo -->
-            <div>
-               <a href="http://shein.com">
+            <div class="header-logo"> 
+               <a href="">
                  Meu logo
                </a>
             </div>
 
         <!-- Menu Desktop / PC -->
-            <nav>
-                <ul>
+            <nav class="menu-desktop">
+                <ul class="menu">
                     <li>
-                        <a href="">
-                            <span> Início </span>
+                        <!-- Cria lista -->
+                        <a href="#inicio" class="menu-link active"> 
+                            <span class="menu-texto"> Início </span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="">
-                            <span> Produtos </span>
+                        <a href="#Produtos" class="menu link active"> 
+                            <span class="menu-texto"> Produtos </span>
                         </a>
                     </li>
 
                      <li>
-                        <a href="">
-                            <span> Sobre </span>
+                        <a href ="" class="menu-link">
+                            <span class="menu-texto"> Sobre </span>
                         </a>
                     </li>
                 
@@ -59,12 +60,14 @@
             </nav>
 
                 <!-- Icone Trocar Cor Tema -->
-                <div>
-                    <!-- Icone Sol ou Lua -->
-                    <i><i class="bi bi-sun-fill"></i></i>
+                <div class="header-toggle">
 
-                    <!--  Botao Hamburguer -->
-                    <button>
+                    <!-- Icone Sol ou Lua -->
+                    <i class="bi bi-sun-fill" 
+                    id="toggleTheme"></i>
+
+                    <!--  Botao Hamburger -->
+                    <button class="btn-menu-mobile" id="menuHamburger">
                         <i class="bi bi-list"></i>
                     </button>                    
 
