@@ -32,3 +32,10 @@ header {
     width: 100%;
 
 }
+    /*  ul */
+.menu {
+    list-style: none;
+    display: flex;
+    /* espaço */
+    gap: 1rem; /* um rem */
+ }
