@@ -49,6 +49,12 @@ header {
 /* Daqui pra cima versão mobile */
 /* ======================================================  */
 
+/*  Logo */
+.logo{
+    width: 7rem;
+}
+
+
 
 /* Reponsivo */
 /* Serve para as telas maiores */
