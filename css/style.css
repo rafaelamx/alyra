@@ -408,6 +408,7 @@ nav a:hover {
     width: 100%;
     max-width: 900px;
     height: 450px;
+    background-image: url('../img/Coleçao.png');
     background-size: cover;
     background-position: center;
     border-radius: var(--radius-lg);
