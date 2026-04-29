@@ -35,28 +35,47 @@
             <span></span>
             <span></span>
         </button>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Alternar Tema">
-            <span class="icon-theme">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-sun">
-                    <circle cx="12" cy="12" r="4" />
-                    <path d="M12 2v2" />
-                    <path d="M12 20v2" />
-                    <path d="m4.93 4.93 1.41 1.41" />
-                    <path d="m17.66 17.66 1.41 1.41" />
-                    <path d="M2 12h2" />
-                    <path d="M20 12h2" />
-                    <path d="m6.34 17.66-1.41 1.41" />
-                    <path d="m19.07 4.93-1.41 1.41" />
+        <div class="header-actions">
+            <a href="#localizacao" class="theme-toggle location-link" aria-label="Nossa Localização" style="margin-right: 10px; background: var(--bg-secondary); color: var(--rose-accent);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
                 </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-moon">
-                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+            </a>
+            <button class="theme-toggle" id="chat-toggle" aria-label="Chat com IA" style="margin-right: 10px; background: var(--bege-accent); color: var(--text-main); position: relative;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    <path d="M13 8H7" />
+                    <path d="M17 12H7" />
                 </svg>
-            </span>
-        </button>
+                <span class="ia-badge">IA</span>
+            </button>
+
+            <button class="theme-toggle" id="theme-toggle" aria-label="Alternar Tema">
+                <span class="icon-theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-sun">
+                        <circle cx="12" cy="12" r="4" />
+                        <path d="M12 2v2" />
+                        <path d="M12 20v2" />
+                        <path d="m4.93 4.93 1.41 1.41" />
+                        <path d="m17.66 17.66 1.41 1.41" />
+                        <path d="M2 12h2" />
+                        <path d="M20 12h2" />
+                        <path d="m6.34 17.66-1.41 1.41" />
+                        <path d="m19.07 4.93-1.41 1.41" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-moon">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                    </svg>
+                </span>
+            </button>
+        </div>
     </header>
 
     <main>
@@ -99,7 +118,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Coleção Alyra</h3>
-                        <span class="product-price">R$ 890,00</span>
+                        <span class="product-price">R$ 3.200,00</span>
                         <div class="product-stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -171,7 +190,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Delineador</h3>
-                        <span class="product-price">R$ 145,00</span>
+                        <span class="product-price">R$ 125,00</span>
                         <div class="product-stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -209,7 +228,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Hidratante</h3>
-                        <span class="product-price">R$ 135,00</span>
+                        <span class="product-price">R$ 280,00</span>
                         <div class="product-stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -245,7 +264,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Blush</h3>
-                        <span class="product-price">R$ 125,00</span>
+                        <span class="product-price">R$ 160,00</span>
                         <div class="product-stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -283,7 +302,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Iluminador Éclat</h3>
-                        <span class="product-price">R$ 165,00</span>
+                        <span class="product-price">R$ 135,00</span>
                         <div class="product-stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -319,7 +338,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Batom Matte Rose</h3>
-                        <span class="product-price">R$ 120,00</span>
+                        <span class="product-price">R$  160,00</span>
                         <div class="product-stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -355,7 +374,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Rimel</h3>
-                        <span class="product-price">R$ 140,00</span>
+                        <span class="product-price">R$ 100,00</span>
                         <div class="product-stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -429,7 +448,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Pó de Seda</h3>
-                        <span class="product-price">R$ 175,00</span>
+                        <span class="product-price">R$ 230,00</span>
                         <div class="product-stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -465,7 +484,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Pincel de Cristal</h3>
-                        <span class="product-price">R$ 95,00</span>
+                        <span class="product-price">R$ 140,00</span>
                         <div class="product-stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -539,7 +558,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Gloss de Diamante</h3>
-                        <span class="product-price">R$ 155,00</span>
+                        <span class="product-price">R$ 270,00</span>
                         <div class="product-stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -647,7 +666,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Paleta de Contorno Palais</h3>
-                        <span class="product-price">R$ 210,00</span>
+                        <span class="product-price">R$ 260,00</span>
                         <div class="product-stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -683,7 +702,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Kit de Pincéis de Ouro</h3>
-                        <span class="product-price">R$ 380,00</span>
+                        <span class="product-price">R$ 320,00</span>
                         <div class="product-stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -719,7 +738,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Sombra Líquida Aurora</h3>
-                        <span class="product-price">R$ 115,00</span>
+                        <span class="product-price">R$ 190,00</span>
                         <div class="product-stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -757,7 +776,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Lip Tint Cereja</h3>
-                        <span class="product-price">R$ 85,00</span>
+                        <span class="product-price">R$ 130,00</span>
                         <div class="product-stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -793,7 +812,7 @@
                     </div>0
                     <div class="product-info">
                         <h3>Corretivo Iluminador</h3>
-                        <span class="product-price">R$ 140,00</span>
+                        <span class="product-price">R$ 230,00</span>
                         <div class="product-stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -831,7 +850,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Base Hidra-Glow</h3>
-                        <span class="product-price">R$ 225,00</span>
+                        <span class="product-price">R$ 525,00</span>
                         <div class="product-stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -867,7 +886,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Lápis de Sobrancelha</h3>
-                        <span class="product-price">R$ 75,00</span>
+                        <span class="product-price">R$ 95,00</span>
                         <div class="product-stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -905,7 +924,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Espelho de Cristal</h3>
-                        <span class="product-price">R$ 290,00</span>
+                        <span class="product-price">R$ 305,00</span>
                         <div class="product-stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -941,7 +960,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Bolsa de Viagem Alyra</h3>
-                        <span class="product-price">R$ 450,00</span>
+                        <span class="product-price">R$ 3.500,00</span>
                         <div class="product-stars">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -988,46 +1007,135 @@
                         <input type="text" id="order-name" placeholder="Como devemos anunciar sua presença?" required>
                     </div>
                     <div class="form-group">
-                        <label>Canal de Comunicação (WhatsApp)</label>
+                        <label>Telefone</label>
                         <input type="tel" id="order-phone" placeholder="(00) 00000-0000" required>
                     </div>
                     <div class="form-group">
-                        <label>A Relíquia Escolhida</label>
-                        <select id="order-product" required>
-                            <option value="" disabled selected>Escolha seu objeto de desejo...</option>
-                            <option value="Coleção Alyra">Coleção Alyra Completa</option>
-                            <option value="Paleta Pétalas">Paleta Pétalas</option>
-                            <option value="Delineador">Delineador</option>
-                            <option value="Hidratante">Hidratante</option>
-                            <option value="Blush">Blush</option>
-                            <option value="Iluminador Éclat">Iluminador Éclat</option>
-                            <option value="Batom Matte Rose">Batom Matte Rose</option>
-                            <option value="Rímel">Rímel</option>
-                            <option value="Sérum de Pérolas">Sérum de Pérolas</option>
-                            <option value="Pó de Seda">Pó de Seda</option>
-                            <option value="Pincel de Cristal">Pincel de Cristal</option>
-                            <option value="Bruma de Ouro">Bruma de Ouro</option>
-                            <option value="Gloss de Diamante">Gloss de Diamante</option>
-                            <option value="Fixador de Maquiagem">Fixador de Maquiagem</option>
-                            <option value="Demaquilante Bifásico">Demaquilante Bifásico</option>
-                            <option value="Paleta de Contorno Palais">Paleta de Contorno Palais</option>
-                            <option value="Kit de Pincéis de Ouro">Kit de Pincéis de Ouro</option>
-                            <option value="Sombra Líquida Aurora">Sombra Líquida Aurora</option>
-                            <option value="Lip Tint Cereja">Lip Tint Cereja</option>
-                            <option value="Corretivo Iluminador">Corretivo Iluminador</option>
-                            <option value="Base Hidra-Glow">Base Hidra-Glow</option>
-                            <option value="Lápis de Sobrancelha">Lápis de Sobrancelha</option>
-                            <option value="Espelho de Cristal">Espelho de Cristal</option>
-                            <option value="Bolsa de Viagem Alyra">Bolsa de Viagem Alyra</option>
-                        </select>
+                        <label>E-mail</label>
+                        <input type="email" id="order-email" placeholder="seuemail@exemplo.com" required>
+                    </div>
+                    <div class="form-row" style="display: flex; gap: 20px;">
+                        <div class="form-group" style="flex: 1;">
+                            <label>CEP</label>
+                            <input type="text" id="order-cep" placeholder="00000-000" required>
+                        </div>
+                        <div class="form-group" style="flex: 2;">
+                            <label>Endereço Completo (rua, número, bairro, cidade)</label>
+                            <input type="text" id="order-address" placeholder="Rua, nº, Bairro, Cidade - UF" required>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label>Desejos Adicionais</label>
+                        <label>Os Objetos de Desejo</label>
+                        <div id="product-list-container">
+                            <!-- Dynamic product rows will appear here -->
+                            <div class="product-selection-row">
+                                <select class="product-select" required>
+                                    <option value="" disabled selected>Escolha seu objeto...</option>
+                                    <option value="Coleção Alyra">Coleção Alyra Completa</option>
+                                    <option value="Paleta Pétalas">Paleta Pétalas</option>
+                                    <option value="Delineador">Delineador</option>
+                                    <option value="Hidratante">Hidratante</option>
+                                    <option value="Blush">Blush</option>
+                                    <option value="Iluminador Éclat">Iluminador Éclat</option>
+                                    <option value="Batom Matte Rose">Batom Matte Rose</option>
+                                    <option value="Rímel">Rímel</option>
+                                    <option value="Sérum de Pérolas">Sérum de Pérolas</option>
+                                    <option value="Pó de Seda">Pó de Seda</option>
+                                    <option value="Pincel de Cristal">Pincel de Cristal</option>
+                                    <option value="Bruma de Ouro">Bruma de Ouro</option>
+                                    <option value="Gloss de Diamante">Gloss de Diamante</option>
+                                    <option value="Fixador de Maquiagem">Fixador de Maquiagem</option>
+                                    <option value="Demaquilante Bifásico">Demaquilante Bifásico</option>
+                                    <option value="Paleta de Contorno Palais">Paleta de Contorno Palais</option>
+                                    <option value="Kit de Pincéis de Ouro">Kit de Pincéis de Ouro</option>
+                                    <option value="Sombra Líquida Aurora">Sombra Líquida Aurora</option>
+                                    <option value="Lip Tint Cereja">Lip Tint Cereja</option>
+                                    <option value="Corretivo Iluminador">Corretivo Iluminador</option>
+                                    <option value="Base Hidra-Glow">Base Hidra-Glow</option>
+                                    <option value="Lápis de Sobrancelha">Lápis de Sobrancelha</option>
+                                    <option value="Espelho de Cristal">Espelho de Cristal</option>
+                                    <option value="Bolsa de Viagem Alyra">Bolsa de Viagem Alyra</option>
+                                </select>
+                                <div class="quantity-control">
+                                    <button type="button" class="qty-btn minus" aria-label="Diminuir">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" readonly>
+                                    <button type="button" class="qty-btn plus" aria-label="Aumentar">+</button>
+                                </div>
+                                <button type="button" class="remove-product" title="Remover item">×</button>
+                            </div>
+                        </div>
+                        <button type="button" id="add-product-btn" class="btn-gold" style="margin-top: 15px; background: var(--bg-secondary); color: var(--rose-accent); padding: 10px 25px; font-size: 0.7rem; border: 1px solid var(--rose-accent);">
+                            + Adicionar outro item
+                        </button>
+                    </div>
+
+                    <div id="order-total-container" style="margin-bottom: 25px; padding: 15px; background: var(--bg-secondary); border-radius: 8px; border-left: 4px solid var(--rose-accent); display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-weight: 600; color: var(--text-main);">Total Estimado:</span>
+                        <span id="order-total-value" style="font-weight: 700; color: var(--rose-accent); font-size: 1.2rem;">R$ 0,00</span>
+                    </div>
+
+                    <div class="gift-options" style="margin-bottom: 20px;">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="order-is-gift">
+                            <span class="checkmark"></span>
+                            Este pedido é um presente?
+                        </label>
+                        <div id="order-gift-selection" style="display: none; margin-top: 10px;">
+                            <label style="font-size: 0.8rem; color: var(--rose-accent); margin-bottom: 5px; display: block;">Opção de Embrulho:</label>
+                            <select id="order-gift-wrap" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--rose-light);">
+                                <option value="0">Papel de Seda Premium (Grátis)</option>
+                                <option value="45">Caixa de Veludo Luxo (+ R$ 45,00)</option>
+                                <option value="25">Embrulho Floral Alyra (+ R$ 25,00)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Informações Adicionais</label>
                         <textarea id="order-msg" rows="3"
                             placeholder="Algo especial que devemos saber sobre o seu pedido?"></textarea>
                     </div>
                     <button type="submit" class="btn-gold" style="width: 100%;">Solicitar Reserva ao Concierge</button>
                 </form>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section class="location" id="localizacao">
+            <div class="section-title reveal">
+                <h2>O Nosso Palais</h2>
+                <p class="decorative-font">Sinta a essência Alyra pessoalmente</p>
+            </div>
+            <div class="location-container reveal">
+                <div class="location-info">
+                    <h3>Visita Exclusiva & Amostras</h3>
+                    <p>Convidamos você a descobrir o universo Alyra em nosso showroom. Oferecemos <strong>amostras e testes exclusivos</strong> de todos os produtos, para que você possa sentir a textura de seda e encontrar o tom perfeito antes de sua reserva.</p>
+                    <div class="location-details">
+                        <div class="detail-item">
+                            <strong>Endereço Completo:</strong>
+                            <span>Av. Paulista, 2000 - Bela Vista, São Paulo - SP</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>CEP:</strong>
+                            <span>01310-200</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Experiência:</strong>
+                            <span>Teste de produtos e amostras disponíveis no local</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Horário:</strong>
+                            <span>Segunda a Sábado, das 10h às 20h</span>
+                        </div>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Av.+Paulista,+2000+-+Bela+Vista,+São+Paulo+-+SP" target="_blank" class="btn-gold" style="display: inline-flex; align-items: center; gap: 10px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Ver no Google Maps
+                    </a>
+                </div>
+                <div class="location-image">
+                    <img src="img/Coleçao.png" alt="Showroom Alyra" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg);">
+                </div>
             </div>
         </section>
 
@@ -1037,10 +1145,31 @@
                 <h2>O Salão de Visitas</h2>
                 <p class="decorative-font">Entre em contato com Alyra</p>
             </div>
-            <div class="reveal">
-                <p style="margin-bottom: 25px; font-size: 1.2rem;">Email: concierge@alyra.com.br</p>
-                <p style="margin-bottom: 50px; font-size: 1.2rem;">Instagram: @alyra.palais</p>
-                <a href="mailto:concierge@alyra.com.br" class="btn-gold">Enviar uma Carta</a>
+            
+            <div class="contact-container reveal">
+                <div class="contact-form-wrapper">
+                    <form id="contact-form">
+                        <div class="form-group-mini">
+                            <input type="text" id="contact-name" placeholder="Sua Assinatura (Nome)" required>
+                        </div>
+                        <div class="form-group-mini">
+                            <input type="email" id="contact-email" placeholder="Seu E-mail" required>
+                        </div>
+                        <div class="form-group-mini">
+                            <textarea id="contact-message" placeholder="Sua Mensagem..." rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-gold" style="width: 100%;">Enviar Mensagem</button>
+                    </form>
+                    <div style="margin-top: 20px; text-align: center;">
+                        <p style="margin-bottom: 15px; font-size: 0.9rem; color: var(--text-muted);">Ou se preferir um atendimento instantâneo:</p>
+                        <a href="https://wa.me/5511942045555" target="_blank" class="btn-gold" style="background: #25D366; border-color: #25D366; display: inline-flex; align-items: center; gap: 10px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                            Conversar no WhatsApp
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -1049,6 +1178,41 @@
         <div class="logo footer-logo">Alyra</div>
         <p>© 2026 Alyra - Coleção Encantada. Curadoria Rose d'Or.</p>
     </footer>
+
+    <!-- AI Chat Interface -->
+    <div id="ai-chat-container" class="chat-container">
+        <div class="chat-header">
+            <div class="chat-title">
+                <span class="status-indicator"></span>
+                Alyra Concierge AI
+            </div>
+            <button id="close-chat" aria-label="Fechar Chat">×</button>
+        </div>
+        <div id="chat-messages" class="chat-messages">
+            <div class="message ai">
+                Olá! 👋 Você está falando com a inteligência artificial do site. Posso te ajudar com dúvidas, produtos ou pedidos!
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Sua mensagem...">
+            <button id="send-chat" aria-label="Enviar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m22 2-7 20-4-9-9-4Z" />
+                    <path d="M22 2 11 13" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5511942045555" target="_blank" class="floating-whatsapp" aria-label="Contato via WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
 
     <script src="js/app.js"></script>
 </body>
