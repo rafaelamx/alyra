@@ -266,16 +266,111 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendChat = document.getElementById('send-chat');
     const chatMessages = document.getElementById('chat-messages');
 
-    if (chatToggle) chatToggle.addEventListener('click', () => chatContainer.classList.toggle('active'));
+    if (chatToggle) {
+        chatToggle.addEventListener('click', () => {
+            chatContainer.classList.toggle('active');
+            if (chatContainer.classList.contains('active') && chatMessages.children.length === 1) {
+                // Initial welcome delay if first time opening
+                setTimeout(() => {
+                    if (chatMessages.children.length === 1) {
+                        addChatMessage("Deseja ver nossos produtos mais desejados ou precisa de ajuda com uma reserva? ✨", 'ai', ['Ver Coleção', 'Onde Comprar', 'Dúvidas']);
+                    }
+                }, 1000);
+            }
+        });
+    }
     if (closeChat) closeChat.addEventListener('click', () => chatContainer.classList.remove('active'));
 
-    const addChatMessage = (text, sender) => {
+    const addChatMessage = (content, sender, suggestions = []) => {
         if (!chatMessages) return;
+        
         const msgDiv = document.createElement('div');
         msgDiv.classList.add('message', sender);
-        msgDiv.textContent = text;
+        
+        if (typeof content === 'string') {
+            msgDiv.innerHTML = content;
+        } else if (content instanceof HTMLElement) {
+            msgDiv.appendChild(content);
+        }
+        
         chatMessages.appendChild(msgDiv);
+        
+        // Add suggestions if any
+        if (suggestions && suggestions.length > 0) {
+            const chipsDiv = document.createElement('div');
+            chipsDiv.classList.add('suggestion-chips');
+            suggestions.forEach(text => {
+                const chip = document.createElement('button');
+                chip.classList.add('chip');
+                chip.textContent = text;
+                chip.onclick = () => {
+                    chatInput.value = text;
+                    handleChat();
+                };
+                chipsDiv.appendChild(chip);
+            });
+            chatMessages.appendChild(chipsDiv);
+        }
+        
         chatMessages.scrollTop = chatMessages.scrollHeight;
+    };
+
+    const showTypingIndicator = () => {
+        const indicator = document.createElement('div');
+        indicator.classList.add('typing-indicator');
+        indicator.id = 'chat-typing';
+        indicator.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+        chatMessages.appendChild(indicator);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    };
+
+    const hideTypingIndicator = () => {
+        const indicator = document.getElementById('chat-typing');
+        if (indicator) indicator.remove();
+    };
+
+    const getProductCard = (name) => {
+        const price = products[name];
+        if (!price) return null;
+        
+        // Map product names to images (simplistic mapping based on the known img/ paths)
+        const imgMap = {
+            "Coleção Alyra": "img/Coleçao.png",
+            "Paleta Pétalas": "img/Paleta.png",
+            "Delineador": "img/Deliniador.png",
+            "Hidratante": "img/Hidratante.png",
+            "Blush": "img/Blush.png",
+            "Iluminador Éclat": "img/Iluminador.png",
+            "Batom Matte Rose": "img/Batom.png",
+            "Rímel": "img/Rimel.png",
+            "Sérum de Pérolas": "img/Serum.png",
+            "Pó de Seda": "img/Po.png",
+            "Pincel de Cristal": "img/Pincel.png",
+            "Bruma de Ouro": "img/Bruma.png",
+            "Gloss de Diamante": "img/gloss1.png",
+            "Fixador de Maquiagem": "img/Fixador de Maquiagem.png",
+            "Demaquilante Bifásico": "img/Demaquilante Bifásico.png",
+            "Paleta de Contorno Palais": "img/Paleta de Contorno Palais.png",
+            "Kit de Pincéis de Ouro": "img/Kit de Pincéis de Ouro.png",
+            "Sombra Líquida Aurora": "img/Sombra Líquida Aurora.png",
+            "Lip Tint Cereja": "img/Lip Tint Cereja.png",
+            "Corretivo Iluminador": "img/Corretivo Iluminador.png",
+            "Base Hidra-Glow": "img/base Hidra.png",
+            "Lápis de Sobrancelha": "img/Lápis de Sobrancelha.png",
+            "Espelho de Cristal": "img/Espelho de Cristal.png",
+            "Bolsa de Viagem Alyra": "img/Bolsa.png"
+        };
+        
+        const card = document.createElement('div');
+        card.classList.add('chat-product-card');
+        card.innerHTML = `
+            <img src="${imgMap[name] || 'img/Coleçao.png'}" class="chat-product-img" alt="${name}">
+            <div class="chat-product-info">
+                <h4>${name}</h4>
+                <div class="chat-product-price">R$ ${price.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</div>
+            </div>
+        `;
+        return card;
     };
 
     const handleChat = () => {
@@ -283,20 +378,70 @@ document.addEventListener('DOMContentLoaded', () => {
         if (text) {
             addChatMessage(text, 'user');
             chatInput.value = '';
+            
+            showTypingIndicator();
+            
             setTimeout(() => {
-                let response = "Olá! 👋 Sou a assistente virtual da Alyra. Como posso tornar seu dia mais especial hoje?";
+                hideTypingIndicator();
+                
+                let response = "Que escolha maravilhosa! ✨ Posso te ajudar com mais detalhes sobre a Alyra?";
+                let suggestions = ['Ver Preços', 'Fazer Reserva', 'Falar com Consultor'];
                 const lowerText = text.toLowerCase();
-                if (lowerText.includes('preço') || lowerText.includes('valor')) {
-                    response = "Nossos itens são exclusivos e os valores variam. Você pode ver todos os preços agora mesmo em nosso catálogo!";
-                } else if (lowerText.includes('entrega') || lowerText.includes('prazo')) {
-                    response = "Realizamos entregas exclusivas em todo o Brasil. O prazo varia de 3 a 7 dias úteis após a confirmação da reserva.";
-                } else if (lowerText.includes('pessoalmente') || lowerText.includes('loja') || lowerText.includes('localizacao')) {
-                    response = "Será um prazer recebê-la! Nosso showroom fica na Av. Paulista, 2000. Você pode ver mais detalhes na seção 'O Nosso Palais' no final da página.";
-                } else if (lowerText.includes('ajuda') || lowerText.includes('como funciona')) {
-                    response = "Eu sou a IA da Alyra! Posso te ajudar a encontrar produtos, tirar dúvidas sobre entregas ou auxiliar no seu pedido. O que deseja saber?";
+                
+                // Response Logic
+                if (lowerText.includes('preço') || lowerText.includes('valor') || lowerText.includes('quanto custa')) {
+                    response = "Nossos itens da <strong>Coleção Delicée</strong> são exclusivos. Os valores variam de R$ 95,00 a R$ 3.500,00 para a curadoria completa. Deseja ver algum item específico?";
+                    suggestions = ['Batom Matte', 'Paleta Pétalas', 'Coleção Completa'];
+                } 
+                else if (lowerText.includes('batom') || lowerText.includes('rose')) {
+                    response = "O <strong>Batom Matte Rose</strong> é um dos nossos favoritos! Ele combina pigmentação intensa com hidratação.";
+                    const card = getProductCard("Batom Matte Rose");
+                    if (card) addChatMessage(card, 'ai');
+                    response += "<br><br>Gostaria de adicioná-lo à sua reserva?";
+                    suggestions = ['Sim, Reservar', 'Ver outros', 'Voltar'];
                 }
-                addChatMessage(response, 'ai');
-            }, 1000);
+                else if (lowerText.includes('coleção') || lowerText.includes('completa')) {
+                    response = "A <strong>Coleção Alyra</strong> é o nosso relicário mais luxuoso. Contém o ritual completo para sua beleza.";
+                    const card = getProductCard("Coleção Alyra");
+                    if (card) addChatMessage(card, 'ai');
+                    response += "<br><br>É uma escolha impecável. Posso auxiliar no seu pedido?";
+                    suggestions = ['Quero a Coleção', 'Ver Detalhes', 'Ajuda'];
+                }
+                else if (lowerText.includes('entrega') || lowerText.includes('prazo')) {
+                    response = "Enviamos nossa elegância para todo o Brasil. O prazo médio é de 3 a 7 dias úteis. Gostaria de calcular para o seu CEP?";
+                    suggestions = ['Como comprar?', 'Onde ficam?'];
+                } 
+                else if (lowerText.includes('pessoalmente') || lowerText.includes('loja') || lowerText.includes('localizacao') || lowerText.includes('onde')) {
+                    response = "Adoraríamos recebê-la em nosso Palais na <strong>Av. Paulista, 2000</strong>. Lá você pode testar todas as nossas texturas!";
+                    suggestions = ['Ver Mapa', 'Agendar Visita', 'Voltar'];
+                } 
+                else if (lowerText.includes('ajuda') || lowerText.includes('dúvidas') || lowerText.includes('como funciona')) {
+                    response = "Estou aqui para guiar sua experiência Alyra. Posso mostrar produtos, explicar sobre o showroom ou ajudar no seu pedido de reserva. O que mais te interessa?";
+                    suggestions = ['Ver Maquiagens', 'Showroom', 'Fazer Pedido'];
+                }
+                else if (lowerText.includes('reservar') || lowerText.includes('comprar') || lowerText.includes('pedido')) {
+                    response = "Para garantir sua exclusividade, as reservas são feitas via formulário ou WhatsApp direto com nosso Concierge. Posso te levar até lá?";
+                    suggestions = ['Ir para Pedidos', 'WhatsApp Direto', 'Dúvidas'];
+                }
+                else if (lowerText === 'ver coleção') {
+                    response = "Nossa coleção é inspirada na leveza e sofisticação. Qual destes te atrai mais?";
+                    suggestions = ['Paleta Pétalas', 'Hidratante', 'Sérum de Pérolas'];
+                }
+
+                addChatMessage(response, 'ai', suggestions);
+                
+                // If specific action triggers
+                if (lowerText.includes('ir para pedidos') || lowerText.includes('fazer reserva')) {
+                    document.querySelector('#pedidos').scrollIntoView({ behavior: 'smooth' });
+                }
+                if (lowerText.includes('ver mapa')) {
+                    window.open('https://www.google.com/maps/search/?api=1&query=Av.+Paulista,+2000', '_blank');
+                }
+                if (lowerText.includes('whatsapp')) {
+                    window.open('https://wa.me/5511942045555', '_blank');
+                }
+
+            }, 1500);
         }
     };
 
