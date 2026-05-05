@@ -231,6 +231,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const cep = document.getElementById('order-cep').value;
             const address = document.getElementById('order-address').value;
             const msg = document.getElementById('order-msg').value;
+            const payment = document.getElementById('order-payment').value;
+            const total = document.getElementById('order-total-value').textContent;
 
             let productsList = "";
             document.querySelectorAll('.product-selection-row').forEach(row => {
@@ -248,12 +250,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const giftText = isGift ? `%0A*Presente:* Sim (Embalagem: ${document.getElementById('order-gift-wrap').options[document.getElementById('order-gift-wrap').selectedIndex].text})` : "";
             
             const whatsappNumber = "5511942045555";
-            const text = `Olá Alyra! ✨%0A%0A*Nova Reserva:*%0A*Nome:* ${name}%0A*Telefone:* ${phone}%0A*E-mail:* ${email}%0A*CEP:* ${cep}%0A*Endereço:* ${address}%0A%0A*Produtos:*%0A${productsList}${giftText}%0A%0A*Informações Adicionais:* ${msg}`;
+            const text = `Olá Alyra! ✨%0A%0A*Nova Reserva:*%0A*Nome:* ${name}%0A*Telefone:* ${phone}%0A*E-mail:* ${email}%0A*CEP:* ${cep}%0A*Endereço:* ${address}%0A%0A*Produtos:*%0A${productsList}${giftText}%0A%0A*Forma de Pagamento:* ${payment}%0A*Total:* ${total}%0A%0A*Informações Adicionais:* ${msg}`;
             
             window.open(`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${text}`, '_blank');
             alert('Sua solicitação foi enviada com sucesso! ✨');
             orderForm.reset();
             if (giftSelection) giftSelection.style.display = 'none';
+            document.getElementById('order-payment').value = "";
             calculateStaticTotal();
         });
     }
